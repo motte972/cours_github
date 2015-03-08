@@ -1,0 +1,85 @@
+QU'EST-CE QUE VERSIONNER SON CODE?
+
+Quand on ecrit un projet (pro ou perso) on se retrouve avec beaucoup de code et il devient alors tres facile de s'y perdre.
+Situation souvent commune: le code fonctionnait bien hier et aujourd'hui plus du tout > que s'est-il passe?
+Versionner son code = garder toutes les traces de modification faite sur son code.
+
+Trace = commit = version du code = serie de modifications sur l'ensemble des fichiers du projet
+> creation d'un fichier
+> suppression d'un fichier
+> ajout de texte
+> etc. peu importe
+
+Somme de tous les commits = historique.
+L'avantage d'un logiciel de versioning est de pouvoir se placer a n'importe quel moment dans cet historique.
+
+Si on utilise le versioning en indiquant a chaque commit les modifications apportees:
+commit "Ajouté CSS"
+commit "Ajouté formulaire"
+commit "Changé texte"
+...
+Il devient alors tres facile de travailler en collaboratif.
+
+
+GIT PAR RAPPORT AUX AUTRES SOLUTIONS DE VERSIONING
+
+Il existe de nombreux logiciels de gestion de version (SVN, CVS, etc.).
+Dans ce cours, git est celui auquel on s'interesse > cree par Linus Torvald en 2005.
+
+Il existe differents modeles.
+
+1/ modele centralise (comme SVN, CVS) 
+> serveur central qui controle toute la base de codes
+> pour faire quoi que ce soit d'important (ajout/suppression de fichiers, partage de code, etc.) il faudra passer par le serveur
+
+2/ modele distribue (comme git)
+> tout le monde a l'integralite du code sur sa machine
+> chaque developpeur peut faire office de serveur central
+
+Les avantages du modele distribue:
+> moins de risque de perdre son code (il est present sur toutes les machines qui participent au projet)
+> operations plus rapides (vu que le code est directement stocke sur la machine)
+> pas besoin de connexion reseau
+
+Il existe d'autres logiciels de versioning en modele distribue comme mercurial ou Bazaar (tout aussi interessant).
+
+
+INSTALLER GIT
+
+Aller sur git-scm.com
+Telecharger / installer.
+Configurer le nom (ou pseudo) et adresse email:
+git config --global user.name "nom/pseudo"
+git config --global user.email "email"
+
+
+FAIRE SON PREMIER COMMIT
+
+Commit = serie de modification a accompagner d'un message explicatif
+
+git init > initialise/indique le repertoire courant comme un repository git
+
+git status > indique si le repertoire courant est un repository git, ou on se situe (branch master, ...), nombre de commit, et s'il y a qqch a commit
+untracked files > git voit qu'il y a un nouveau fichier mais ne sait pas quoi en faire car pas reference dans son index
+git maintient un index, une lise de toutes les choses qu'il doit garder en memoire
+git add checklist_apprendre_a_coder.md > ajoute un fichier (dossier) au staging
+
+git commit -m "Ajouté fichier checklist" > lance un commit (option -m pour ajouter message au commit)
+
+
+LIRE L'HISTORIQUE
+
+Un projet c'est un enormement de commits. Donc pouvoir se deplacer dans l'historique est necessaire.
+
+git log > permet de voir l'historique des commits (en bas le plus vieux, en haut le plus recent)
+Le numero indique (en jaune) pour chaque commit est le sha (cle de hachage) > identifie de maniere unique le commit..
+
+note: un fichier (meme si deja ajoute au staging, au cours de la journee ...), apres une nouvelle modification, devra etre rajoute au staging pour pouvoir etre commite... un peu verbeux, du coup:
+git commit -a -m "Derniere modification" > -a permet de faire un commit sur les fichiers qui ont deja staged (presents dans l'index)
+
+
+SE POSITIONNER SUR UN COMMIT DONNE
+
+git checkout {sha} > se positionne sur le commit du sha renseigne
+git checkout master > revenir sur le dernier commit (statut actuel)
+
