@@ -6,7 +6,8 @@ Aussi, si on veut collaborer avec d'autres personnes, il faut pouvoir tous sauve
 
 git remote add origin {url}
 
-Un remote est un autre ordinateur dont on proprietaire ou pas (GitHub, Bitbucket).
+Un remote est un (autre) ordinateur dont on est proprietaire ou pas (GitHub, Bitbucket).
+Ca peut etre: son propre ordinateur, l'ordinateur d'un de ses collaborateurs, son serveur (si on en a un) ou comme indique ci-dessus, le serveur d'une entreprise comme GitHub ou Bitbucket.
 
 Le workflow devient donc:
 1/ j'ecris mon code
