@@ -1,0 +1,41 @@
+COMPRENDRE LES REMOTES
+
+Un des problemes du modele distribue est la perte/vol de materiel > on souhaite avoir un backup quelque part pour ne pas perdre son code.
+
+Aussi, si on veut collaborer avec d'autres personnes, il faut pouvoir tous sauvegarder/partager notre code a un certain endroit distant.
+
+git remote add origin {url}
+
+Un remote est un autre ordinateur dont on proprietaire ou pas (GitHub, Bitbucket).
+
+Le workflow devient donc:
+1/ j'ecris mon code
+2/ je fais mes commits
+3/ j'envoie mes commits sur le remote
+
+GITHUB, QU'EST-CE QUE C'EST?
+
+GitHub est un service en ligne qui propose un hebergement gratuit de tous les repositories opensource (plans payants pour code prive), numero 1 mondial avec +14 millions de repositories heberges sur leurs serveurs.
+
+RECUPERER SON CODE D'UN AUTRE REPOSITORY
+
+Recuperer du code d'un autre repository = cloning
+en https c'est plus simple que ssh
+git clone {url}
+id et mot de passe (si premiere fois) > ceux de GitHub
+
+CREER SON PREMIER REPOSITORY
+
+(sur GitHub > + en haut a droite)
+ensuite on peut le recuperer...
+
+ENVOYER SON CODE SUR GITHUB
+
+git push origin master
+par defaut si on a 1 seul remote, il s'appelle origin
+la branche c'est le code courant
+
+RECUPERER SES MODIFICATIONS
+
+git pull origin master
+si on travaille a plusieurs, il faut absolument etre le plus a jour entre les machines
